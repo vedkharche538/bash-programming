@@ -1,0 +1,86 @@
+# Filesystem and File Permissions
+The Filesystem is a kind of structure organized with the collection of files or folders. It determines control over data, i.e., how data is to be stored and retrieved?
+
+Linux Filesystem is a tree-like structure comprised of lots of directories. These directories are just the files containing the list of other files. Linux makes no difference between the files and directories. All the files in Linux filesystem are known as directories, and these files are categorized as follows:
+
+Ordinary files that contain data, text, images, program instructions.
+Special files that give access to hardware devices.
+Directories that contain both the ordinary and special files.
+Let's have a look on Linux filesystem.
+
+List all the files and directories by using ls -l command.
+
+#### Filesystem and File Permissions
+There are seven columns in the given image, which are defined as follows:
+
+The first column represents the file type and file permissions. Every file row begins with the file type and then specifies the access permissions associated with the files. These are the following types of files with their specific characters:
+Regular file (-)
+Directory (d)
+Link (l)
+Special File (c)
+Socket (s)
+Named pipe (p)
+Block device (b)
+The second column represents the number of memory blocks.
+The third column represents the owner of the file or the superuser, who has the administrating power.
+The fourth column represents the group of owner/superuser.
+The fifth column represents the file size.
+The sixth column represents the date and time when the file was created or lastly modified.
+The last column represents the name of the file or the directory.
+File Permissions
+In spite of having the best security features, Linux-based Operating System requires file permissions to secure its filesystem, as there are file permission based issues that occur when a user assigns improper permissions to the files and directories. These issues may cause malicious or accidental tampering to the filesystem. So Linux secures its filesystem with two authorization attributes as follows:
+
+1. Permissions
+There are three types of permissions associated with the files as follows:
+
+Read (r) permission by which you can view the content of the file.
+
+Write (w) permission by which you can modify the file content.
+
+Execute (x) permission by which one can run the programming file or script.
+
+Note: Dash (-) is provided in case of permission get invoked.
+2. Ownership
+There are three types of Linux users as follows:
+
+Owner is the superuser who creates the file. He can access all the permissions associated with a file that includes reading, modifying, and running the file.
+
+Group is known as a set of users or multi-users. The superuser creates it. Every member in a group has the same access permissions associated with a file.
+
+Other users, i.e., the third-party users can be anybody else who doesn't belong to the Superuser/Group members. They use the permissions associated with any file or directory which are created or owned by the Superuser/Group members.
+
+Let's understand this concept by the given an example.
+
+## Filesystem and File Permissions
+See the first column of the darkened row. It has ten slots.
+
+The first one slot (-) represents a file named by aa.sh
+Next three slots (rw-) specify the permissions used by the assigned owner. These permissions include read and write. Here, execute permission is denied.
+Next three slots (rw-) specify the permissions used by the group members who own the directory. These permissions include read and write, but do not include execute permission.
+Next three slots (r--) specify the permissions used by the third=party users. These permissions include read permission only. Here, read and write both the permissions have been denied.
+AD
+## Changing Permissions
+You can alter the file permissions for each class (user/group/others) by using chmod command. The basic form to remove or add any permission for any class is:
+
+chmod [class][operator][permission] file_name  
+  
+chmod [ugoa][+or-][rwx] file_name  
+where
+
+class is represented by the indicators - u, g, o, and a such that u for the user, g for the group, o for the other, and a for all the classes.
+
+operator ( + or - ) is used to add or remove the permission.
+
+permission is represented by the indicators r, w, x to allow access for reading, modifying, or running the script respectively.
+
+Let we alter the permissions of darkened aa.sh file given below:
+AD
+
+Filesystem and File Permissions
+1. Add the denied permissions for all classes.
+
+Filesystem and File Permissions
+2. Remove the write and execute permission for other class.
+
+Filesystem and File Permissions
+And so you can alter any permission for any class if you find any need.
